@@ -1,0 +1,14 @@
+{
+  "homePage": {
+    "title": "Home",
+    "description": "Home description"
+  },
+  "aboutPage": {
+    "title": "About",
+    "description": "About description"
+  },
+  "contactPage": {
+    "title": "Contact",
+    "description": "Contact description"
+  }
+}
