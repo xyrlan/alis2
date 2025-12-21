@@ -3,6 +3,7 @@ import { PROJECTS_DATA } from '../../consts/projects';
 import { useEffect, useRef, useState } from 'react';
 import { VideoLoader } from './VideoLoader';
 import { Project } from '../../types/projects.type';
+import { CursorChip } from '../CursorChip';
 
 function ProjectComponent({
   project,
@@ -27,7 +28,10 @@ function ProjectComponent({
   }, [isInView, index, onInView]);
 
   return (
-    <div ref={ref} className={`h-screen top-0 ${isLast ? '' : 'sticky'}`}>
+    <div
+      ref={ref}
+      className={`h-screen cursor-pointer top-0 ${isLast ? '' : 'sticky'}`}
+    >
       <VideoLoader src={project.mainVideo} />
     </div>
   );
@@ -38,8 +42,17 @@ export const ProjectSection = () => {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
 
   const activeProject = PROJECTS_DATA[activeProjectIndex];
+
+  const [isHovering, setIsHovering] = useState(false);
+
   return (
-    <div className="relative" ref={containerRef}>
+    <div
+      className="relative select-none"
+      ref={containerRef}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
+      <CursorChip isParentHovering={isHovering} />
       <AnimatePresence>
         <motion.div
           key={activeProjectIndex}
@@ -47,7 +60,7 @@ export const ProjectSection = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="h-[400vh] w-full grid grid-rows-4 z-10 absolute inset-0"
+          className="h-[400vh] w-full grid grid-rows-4 z-10 absolute inset-0 pointer-events-none"
         >
           <div className="row-span-1 flex flex-col justify-center items-center sticky top-0">
             <h2 className="text-5xl font-bold uppercase font-league-gothic">

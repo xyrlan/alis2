@@ -3,9 +3,9 @@ import { SERVICES_DATA } from '../../consts/services';
 export const MoreAboutSection = () => {
   return (
     <div className="sticky top-0">
-      <div className="h-[75vh] w-full bg-black z-10 px-6 pt-56 pb-28">
-        <div className="text-start ">
-          <p className="text-white tracking-tighter text-6xl font-bold selection:bg-white selection:text-black">
+      <div className="h-[60vh] w-full bg-black z-10 px-6 pt-56 pb-28 flex justify-center selection:bg-white selection:text-black">
+        <div className="text-start container  ">
+          <p className="text-white tracking-tighter text-6xl font-bold ">
             We’re a videography studio driven by a love for cinematic
             storytelling and intentional filmmaking. From brand films and
             commercials to weddings and editorial pieces, we bring a crafted,
