@@ -40,10 +40,8 @@ export default function RootLayout({
         <SmoothScroll>
           <NextIntlClientProvider>
             <Navbar />
-            <PageAnimatePresence>
-              {children}
-              <Footer />
-            </PageAnimatePresence>
+            <PageAnimatePresence>{children}</PageAnimatePresence>
+            <Footer />
           </NextIntlClientProvider>
         </SmoothScroll>
       </body>
