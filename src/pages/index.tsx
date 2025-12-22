@@ -14,7 +14,7 @@ export default function Home() {
           content="Ali's Filmes - Audiovisual Production"
         />
       </Head>
-      <div>
+      <div className="h-full">
         <HeroSection />
         <InfiniteScrollingCarousel />
         <ProjectSection />

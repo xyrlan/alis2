@@ -57,13 +57,13 @@ export default function PageTransition({
           duration: 0.5,
           ease: [0.22, 1, 0.36, 1],
         }}
+        className="bg-background"
         style={{
-          width: '100%',
           height: isAnimating ? '100vh' : 'auto',
           position: isAnimating ? 'absolute' : 'relative',
-          top: 0,
-          left: 0,
-          overflow: 'hidden',
+          top: isAnimating ? 0 : undefined,
+          left: isAnimating ? 0 : undefined,
+          overflow: isAnimating ? 'hidden' : 'visible',
         }}
       >
         {children}

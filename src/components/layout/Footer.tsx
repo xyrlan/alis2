@@ -7,7 +7,7 @@ export const Footer = () => {
   const text = 'START YOUR STORY';
   const COPYRIGHT_TEXT = "© 2025 Ali's Filmes.";
   return (
-    <footer className="h-[40vh] w-full pt-28 px-6 z-20 bg-background flex flex-col justify-between items-center relative">
+    <footer className="h-[40vh] w-full pt-28 px-6 -z-10 bg-background flex flex-col justify-between items-center fixed bottom-0">
       <div className="w-full flex justify-center items-center uppercase tracking-normal text-9xl select-none leading-26 relative font-league-gothic h-[280px]">
         <Image
           src="/images/border.png"

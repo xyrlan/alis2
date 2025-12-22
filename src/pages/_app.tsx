@@ -34,14 +34,14 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div
-        className={`${geistSans.variable} ${geistMono.variable} ${leagueGothic.variable}`}
+        className={`${geistSans.variable} ${geistMono.variable} ${leagueGothic.variable} relative mb-[40vh]`}
       >
         <SmoothScroll>
           <Navbar />
           <PageTransition routerKey={router.asPath}>
             <Component {...pageProps} />
-            <Footer />
           </PageTransition>
+          <Footer />
         </SmoothScroll>
       </div>
     </>
