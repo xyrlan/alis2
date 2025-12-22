@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 
-const MotionLinkComponent = motion(Link);
+const MotionLinkComponent = motion.create(Link);
 
 const DURATION = 0.25;
 const STAGGER = 0.025;

@@ -7,23 +7,23 @@ export const Footer = () => {
   const text = 'START YOUR STORY';
   const COPYRIGHT_TEXT = "© 2025 Ali's Filmes.";
   return (
-    <footer className="h-[40vh] w-full pt-28 px-6 z-20 bg-black flex flex-col justify-between items-center relative">
-      <div className="w-full flex justify-center uppercase tracking-normal text-9xl select-none leading-26 relative font-league-gothic">
+    <footer className="h-[40vh] w-full pt-28 px-6 z-20  flex flex-col justify-between items-center relative">
+      <div className="w-full flex justify-center items-center uppercase tracking-normal text-9xl select-none leading-26 relative font-league-gothic h-[280px]">
         <Image
           src="/images/border.png"
           alt="border"
           width={2177}
           height={200}
-          className="absolute -top-22 left-0 h-[18px] scale-x-200"
+          className="absolute top-0 left-0 h-[18px] scale-x-200"
         />
         <Image
           src="/images/border.png"
           alt="border"
           width={2177}
           height={200}
-          className="absolute -bottom-20 rotate-180 left-0 h-[18px] scale-x-200"
+          className="absolute bottom-0 rotate-180 left-0 h-[18px] scale-x-200"
         />
-        <div className="border-b w-fit">
+        <div className="border-b w-fit h-fit">
           <FlipLink href="/" width="10">
             {text}
           </FlipLink>

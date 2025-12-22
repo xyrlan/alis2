@@ -1,7 +1,65 @@
-export default function ProjectsPage() {
+'use client';
+
+import { useRef, useState } from 'react';
+import { PROJECTS_DATA } from '../consts/projects';
+import { CursorChip } from '../components/CursorChip';
+import { Project } from '../types/projects.type';
+
+function ProjectCard({
+  project,
+  ref,
+  onMouseEnter,
+  onMouseLeave,
+}: {
+  project: Project;
+  ref: React.RefObject<HTMLDivElement | null>;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+}) {
   return (
-    <div className="h-screen w-full bg-red-500 flex justify-center items-center text-8xl">
-      <h1>Projects</h1>
+    <div
+      ref={ref}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      className="cursor-pointer"
+    >
+      <video
+        src={project.mainVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="w-full h-full object-cover"
+      />
+      <div className="flex justify-between">
+        <h2 className="font-league-gothic text-xl uppercase">
+          {project.title}
+        </h2>
+        <span className="text-base text-gray-400">{project.category}</span>
+      </div>
+    </div>
+  );
+}
+
+export default function ProjectsPage() {
+  const projectRefs = useRef<HTMLDivElement>(null);
+  const [isHovering, setIsHovering] = useState(false);
+
+  return (
+    <div className="flex flex-col items-center justify-center py-32 px-6">
+      <CursorChip isParentHovering={isHovering} />
+      <h1 className="font-league-gothic text-9xl">PROJECTS</h1>
+      <div className="grid grid-cols-3 gap-x-4 gap-y-12 mt-20">
+        {PROJECTS_DATA.map((project) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+            ref={projectRefs}
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+          />
+        ))}
+      </div>
     </div>
   );
 }

@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${leagueGothic.variable} antialiased overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} ${leagueGothic.variable} antialiased overflow-hidden text-white selection:bg-white selection:text-black`}
       >
         <SmoothScroll>
           <NextIntlClientProvider>
