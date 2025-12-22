@@ -48,10 +48,23 @@ export default function PageAnimatePresence({
           setIsAnimating(false);
         }}
         className={isAnimating ? 'disable-sticky' : ''}
-        initial={{ y: '100vh' }}
+        initial={{
+          y: '100vh',
+          transition: {
+            duration: 0.3,
+            ease: 'easeInOut',
+          },
+        }}
         animate={{ y: 0 }}
-        exit={{ y: '-100vh', overflow: 'hidden', height: '100vh' }}
-        transition={{ duration: 0.3, ease: [0.76, 0, 0.24, 1] }}
+        exit={{
+          y: '-100vh',
+          overflow: 'hidden',
+          height: '100vh',
+          transition: {
+            duration: 0.6,
+            ease: 'easeInOut',
+          },
+        }}
       >
         <FrozenRoute>{children}</FrozenRoute>
       </motion.div>

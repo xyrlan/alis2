@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import { PROJECTS_DATA } from '../consts/projects';
 import { CursorChip } from '../components/CursorChip';
 import { Project } from '../types/projects.type';
+import { motion } from 'motion/react';
 
 function ProjectCard({
   project,
@@ -17,7 +18,11 @@ function ProjectCard({
   onMouseLeave: () => void;
 }) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
       ref={ref}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -37,7 +42,7 @@ function ProjectCard({
         </h2>
         <span className="text-base text-gray-400">{project.category}</span>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -48,7 +53,15 @@ export default function ProjectsPage() {
   return (
     <div className="flex flex-col items-center justify-center py-32 px-6">
       <CursorChip isParentHovering={isHovering} />
-      <h1 className="font-league-gothic text-9xl">PROJECTS</h1>
+      <motion.h1
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+        className="font-league-gothic text-9xl"
+      >
+        PROJECTS
+      </motion.h1>
       <div className="grid grid-cols-3 gap-x-4 gap-y-12 mt-20">
         {PROJECTS_DATA.map((project) => (
           <ProjectCard

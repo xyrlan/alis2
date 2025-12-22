@@ -10,6 +10,8 @@ export default function SmoothScroll({
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     lenisRef.current = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -32,6 +34,8 @@ export default function SmoothScroll({
       lenisRef.current?.destroy();
     };
   }, []);
+
+  if (typeof window === 'undefined') return null;
 
   return <>{children}</>;
 }
