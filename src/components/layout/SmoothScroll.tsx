@@ -35,7 +35,5 @@ export default function SmoothScroll({
     };
   }, []);
 
-  if (typeof window === 'undefined') return null;
-
   return <>{children}</>;
 }

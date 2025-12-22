@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { VideoLoader } from './VideoLoader';
-import { HERO_SECTION } from '../../consts/herosection';
-import { Clock } from '../Clock';
+import { HERO_SECTION } from '@/src/consts/herosection';
+import { Clock } from '@/src/components/Clock';
 import { HeroLogo } from './HeroLogo';
 
 export const HeroSection = () => {

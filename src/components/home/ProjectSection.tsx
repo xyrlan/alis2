@@ -1,9 +1,9 @@
 import { AnimatePresence, motion, useInView } from 'motion/react';
-import { PROJECTS_DATA } from '../../consts/projects';
+import { PROJECTS_DATA } from '@/src/consts/projects';
 import { useEffect, useRef, useState } from 'react';
 import { VideoLoader } from './VideoLoader';
-import { Project } from '../../types/projects.type';
-import { CursorChip } from '../CursorChip';
+import { Project } from '@/src/types/projects.type';
+import { CursorChip } from '@/src/components/CursorChip';
 
 function ProjectComponent({
   project,

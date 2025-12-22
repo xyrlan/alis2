@@ -1,5 +1,5 @@
 import { motion, MotionValue, useTransform } from 'motion/react';
-import { ABOUT_DATA } from '../../consts/about';
+import { ABOUT_DATA } from '@/src/consts/about';
 import Image from 'next/image';
 interface AboutStoryProps {
   scrollYProgress: MotionValue<number>;

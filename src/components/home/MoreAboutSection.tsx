@@ -1,4 +1,4 @@
-import { SERVICES_DATA } from '../../consts/services';
+import { SERVICES_DATA } from '@/src/consts/services';
 
 export const MoreAboutSection = () => {
   return (

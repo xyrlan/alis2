@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ABOUT_DATA } from '../../consts/about';
+import { ABOUT_DATA } from '@/src/consts/about';
 
 export const AboutOurTeam = () => {
   return (
