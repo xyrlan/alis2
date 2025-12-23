@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useInView } from 'motion/react';
+import { useInView } from 'motion/react';
 import { PROJECTS_DATA } from '@/src/consts/projects';
 import { useEffect, useRef, useState } from 'react';
 import { VideoLoader } from './VideoLoader';
@@ -53,27 +53,21 @@ export const ProjectSection = () => {
       onMouseLeave={() => setIsHovering(false)}
     >
       <CursorChip isParentHovering={isHovering} />
-      <AnimatePresence>
-        <motion.div
-          key={activeProjectIndex}
-          // initial={{ opacity: 0 }}
-          // animate={{ opacity: 1 }}
-          // exit={{ opacity: 0 }}
-          // transition={{ duration: 0.3 }}
-          className="h-[400vh] w-full grid grid-rows-4 z-10 absolute inset-0 pointer-events-none"
-        >
-          <div className="row-span-1 flex flex-col justify-center items-center sticky top-0">
-            <h2 className="text-5xl font-bold uppercase font-league-gothic">
-              {activeProject?.title}
-            </h2>
-            <div className="flex items-center gap-2 font-medium tracking-tighter">
-              <span>{activeProject?.year}</span>
-              <span>•</span>
-              <span>{activeProject?.category}</span>
-            </div>
+      <div
+        key={activeProjectIndex}
+        className="h-[400vh] w-full grid grid-rows-4 z-10 absolute inset-0 pointer-events-none"
+      >
+        <div className="row-span-1 flex flex-col justify-center items-center sticky top-0">
+          <h2 className="text-5xl font-bold uppercase font-league-gothic">
+            {activeProject?.title}
+          </h2>
+          <div className="flex items-center gap-2 font-medium tracking-tighter">
+            <span>{activeProject?.year}</span>
+            <span>•</span>
+            <span>{activeProject?.category}</span>
           </div>
-        </motion.div>
-      </AnimatePresence>
+        </div>
+      </div>
       {PROJECTS_DATA.map((project, index) => (
         <ProjectComponent
           key={project.id}
