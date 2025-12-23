@@ -56,10 +56,10 @@ export const ProjectSection = () => {
       <AnimatePresence>
         <motion.div
           key={activeProjectIndex}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
+          // initial={{ opacity: 0 }}
+          // animate={{ opacity: 1 }}
+          // exit={{ opacity: 0 }}
+          // transition={{ duration: 0.3 }}
           className="h-[400vh] w-full grid grid-rows-4 z-10 absolute inset-0 pointer-events-none"
         >
           <div className="row-span-1 flex flex-col justify-center items-center sticky top-0">
