@@ -56,7 +56,7 @@ export const InfiniteScrollingCarousel = () => {
       <motion.div
         className="absolute left-0 flex gap-50 z-50"
         ref={ref}
-        style={{ x: xTranslation }}
+        style={{ x: xTranslation, willChange: 'transform' }}
       >
         {[...images, ...images].map((image, index) => (
           <CarouselItem key={index} image={image} />

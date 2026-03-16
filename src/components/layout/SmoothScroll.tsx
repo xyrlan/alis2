@@ -21,14 +21,8 @@ export default function SmoothScroll({
       wheelMultiplier: 1,
       touchMultiplier: 2,
       infinite: false,
+      autoRaf: true,
     });
-
-    function raf(time: number) {
-      lenisRef.current?.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
 
     return () => {
       lenisRef.current?.destroy();

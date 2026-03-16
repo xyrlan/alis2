@@ -1,11 +1,11 @@
 import { useInView } from 'motion/react';
 import { PROJECTS_DATA } from '@/src/consts/projects';
-import { useEffect, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { VideoLoader } from './VideoLoader';
 import { Project } from '@/src/types/projects.type';
 import { CursorChip } from '@/src/components/CursorChip';
 
-function ProjectComponent({
+const ProjectComponent = memo(function ProjectComponent({
   project,
   index,
   isLast,
@@ -35,7 +35,7 @@ function ProjectComponent({
       <VideoLoader src={project.mainVideo} />
     </div>
   );
-}
+});
 
 export const ProjectSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -44,6 +44,10 @@ export const ProjectSection = () => {
   const activeProject = PROJECTS_DATA[activeProjectIndex];
 
   const [isHovering, setIsHovering] = useState(false);
+
+  const handleInView = useCallback((index: number) => {
+    setActiveProjectIndex(index);
+  }, []);
 
   return (
     <div
@@ -54,7 +58,6 @@ export const ProjectSection = () => {
     >
       <CursorChip isParentHovering={isHovering} />
       <div
-        key={activeProjectIndex}
         className="h-[400vh] w-full grid grid-rows-4 z-10 absolute inset-0 pointer-events-none"
       >
         <div className="row-span-1 flex flex-col justify-center items-center sticky top-0">
@@ -74,7 +77,7 @@ export const ProjectSection = () => {
           project={project}
           index={index}
           isLast={index === PROJECTS_DATA.length - 1}
-          onInView={setActiveProjectIndex}
+          onInView={handleInView}
         />
       ))}
     </div>

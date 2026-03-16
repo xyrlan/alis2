@@ -2,17 +2,30 @@
 import { NAVBAR_ITEMS } from '@/src/consts/navbar';
 import { motion } from 'motion/react';
 import { FlipLink } from './FlipLink';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export function Navbar() {
   const [isOnTop, setIsOnTop] = useState(true);
+  const rafId = useRef(0);
+  const isOnTopRef = useRef(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsOnTop(window.scrollY === 0);
+      if (rafId.current) return;
+      rafId.current = requestAnimationFrame(() => {
+        const onTop = window.scrollY === 0;
+        if (onTop !== isOnTopRef.current) {
+          isOnTopRef.current = onTop;
+          setIsOnTop(onTop);
+        }
+        rafId.current = 0;
+      });
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId.current) cancelAnimationFrame(rafId.current);
+    };
   }, []);
 
   return (

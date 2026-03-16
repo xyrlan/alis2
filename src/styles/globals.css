@@ -47,6 +47,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.sticky {
+  will-change: transform;
+}
+
 .disable-sticky * {
   overflow: hidden !important;
   height: 100vh !important;

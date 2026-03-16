@@ -3,23 +3,36 @@ import { VideoLoader } from './VideoLoader';
 import { HERO_SECTION } from '@/src/consts/herosection';
 import { Clock } from '@/src/components/Clock';
 import { HeroLogo } from './HeroLogo';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const HeroSection = () => {
   const [isOnTop, setIsOnTop] = useState(true);
+  const rafId = useRef(0);
+  const isOnTopRef = useRef(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsOnTop(window.scrollY === 0);
+      if (rafId.current) return;
+      rafId.current = requestAnimationFrame(() => {
+        const onTop = window.scrollY === 0;
+        if (onTop !== isOnTopRef.current) {
+          isOnTopRef.current = onTop;
+          setIsOnTop(onTop);
+        }
+        rafId.current = 0;
+      });
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId.current) cancelAnimationFrame(rafId.current);
+    };
   }, []);
 
   return (
     <main className="sticky top-0">
       <div className="h-screen w-full">
-        <VideoLoader src={HERO_SECTION.video}>
+        <VideoLoader src={HERO_SECTION.video} preload="metadata">
           <div className="flex justify-center items-center h-full w-full">
             <HeroLogo />
           </div>

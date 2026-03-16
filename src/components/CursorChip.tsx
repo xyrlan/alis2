@@ -24,6 +24,8 @@ export const CursorChip = ({
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
+    if (!isParentHovering) return;
+
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
@@ -32,7 +34,7 @@ export const CursorChip = ({
 
     window.addEventListener('mousemove', moveCursor);
     return () => window.removeEventListener('mousemove', moveCursor);
-  }, [cursorX, cursorY, isVisible]);
+  }, [cursorX, cursorY, isVisible, isParentHovering]);
 
   if (!isParentHovering) return null;
 

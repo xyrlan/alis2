@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { memo, useState, useEffect } from 'react';
 
-export function Clock() {
+export const Clock = memo(function Clock() {
   const [time, setTime] = useState<Date | null>(null);
 
   useEffect(() => {
@@ -23,4 +23,4 @@ export function Clock() {
   });
 
   return <li>{formattedTime}</li>;
-}
+});

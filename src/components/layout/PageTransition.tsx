@@ -59,6 +59,7 @@ export default function PageTransition({
         }}
         className="bg-background"
         style={{
+          willChange: 'transform',
           height: isAnimating ? '100vh' : 'auto',
           position: isAnimating ? 'absolute' : 'relative',
           top: isAnimating ? 0 : undefined,
