@@ -10,7 +10,11 @@ export const NAVBAR_ITEMS: NavbarItems[] = [
     href: '/projects',
   },
   {
-    name: 'Sobre Nós',
+    name: 'Servi\u00e7os',
+    href: '/servicos',
+  },
+  {
+    name: 'Sobre N\u00f3s',
     href: '/about',
   },
   {
