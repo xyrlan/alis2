@@ -2,24 +2,24 @@ import { About } from '../types/about.type';
 
 export const ABOUT_DATA: About = {
   title:
-    'Amber Films is a creative studio devoted to the art of cinematic storytelling. With a signature style that blends warmth, elegance, and emotion, we craft timeless visual narratives that resonate deeply.',
+    'A Alis \u00e9 uma produtora que cria filmes com alma e dire\u00e7\u00e3o. Nosso olhar \u00e9 sens\u00edvel ao detalhe, ao tempo das hist\u00f3rias e \u00e0 verdade que elas carregam. Produzimos conte\u00fados com linguagem cinematogr\u00e1fica e prop\u00f3sito estrat\u00e9gico \u2014 do calor de uma boa ideia \u00e0 emo\u00e7\u00e3o de quem assiste. Seja para marcas, campanhas ou projetos autorais, voamos junto com quem acredita que o audiovisual tamb\u00e9m \u00e9 uma forma de deixar legado.',
   title2:
-    'Amber was born from a love of beautiful visuals and honest storytelling.',
-  description: 'Descrição do projeto 1',
+    'A Alis nasceu do amor por boas hist\u00f3rias e imagens com verdade.',
+  description: 'Produtora audiovisual de Bras\u00edlia',
   description2:
-    'What began as a side project with a camera, a curious eye, and a deep appreciation for good light has grown into a creative studio trusted by brands, couples, and storytellers alike. Along the way, we’ve learned that what truly matters isn’t just how things look, it’s how they feel.',
+    'O que come\u00e7ou como um projeto movido por curiosidade, uma c\u00e2mera e um olhar atento \u00e0 boa luz se transformou em uma produtora confiada por marcas, campanhas e contadores de hist\u00f3rias. No caminho, aprendemos que o que realmente importa n\u00e3o \u00e9 apenas como as coisas parecem \u2014 \u00e9 como elas fazem sentir.',
   items: [
     {
-      title: 'Years of Experience',
-      value: '10+',
+      title: 'anos de atua\u00e7\u00e3o no mercado da comunica\u00e7\u00e3o audiovisual',
+      value: '4+',
     },
     {
-      title: 'Films Delivered',
-      value: '100+',
+      title: 'pe\u00e7as encomendadas',
+      value: '1000+',
     },
     {
-      title: 'Industry Awards',
-      value: '16',
+      title: 'parceiros atendidos',
+      value: '50+',
     },
   ],
   ourTeam: [

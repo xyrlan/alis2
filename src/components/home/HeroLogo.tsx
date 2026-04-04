@@ -4,8 +4,8 @@ import Image from 'next/image';
 const LOGO_CONFIG = {
   src: '/alishorizontal-branca.png',
   alt: 'Alis Filmes Logo',
-  width: 1000,
-  height: 1000,
+  width: 500,
+  height: 500,
 };
 
 const logoAnimation = {
@@ -25,7 +25,7 @@ export const HeroLogo = () => (
       alt={LOGO_CONFIG.alt}
       width={LOGO_CONFIG.width}
       height={LOGO_CONFIG.height}
-      className="object-contain drop-shadow-2xl -translate-x-10 md:block hidden select-none"
+      className="object-contain drop-shadow-2xl md:-translate-x-10 w-[200px] md:w-[350px] lg:w-[500px] select-none"
       priority
     />
   </motion.div>

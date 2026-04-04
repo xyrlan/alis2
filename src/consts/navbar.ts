@@ -6,15 +6,15 @@ export const NAVBAR_ITEMS: NavbarItems[] = [
     href: '/',
   },
   {
-    name: 'Projects',
+    name: 'Projetos',
     href: '/projects',
   },
   {
-    name: 'About',
+    name: 'Sobre Nós',
     href: '/about',
   },
   {
-    name: 'Lets Talk',
-    href: '/lets-talk',
+    name: 'Contato',
+    href: '/contato',
   },
 ];

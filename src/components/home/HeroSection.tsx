@@ -48,8 +48,8 @@ export const HeroSection = () => {
             className="fixed bottom-0 left-0 right-0 z-10 px-6 py-2"
           >
             <ul className="flex justify-between tracking-tighter text-sm font-semibold">
-              <li>Creative Production Studio</li>
-              <li>Brasilia, DF</li>
+              <li className="hidden md:block">Creative Production Studio</li>
+              <li className="hidden md:block">Brasilia, DF</li>
               <Clock />
               <li>© Alis Filmes 2025</li>
             </ul>

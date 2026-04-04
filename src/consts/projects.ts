@@ -3,14 +3,15 @@ import { Project } from '../types/projects.type';
 export const PROJECTS_DATA: Project[] = [
   {
     id: 1,
-    title: 'Lançamento para Frango no Pote',
+    title: 'Comercial Frango no Pote BBQ',
     year: 2025,
-    category: 'Lançamento',
+    category: 'Comercial',
     client: 'Frango no Pote',
     mainVideo: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/fnp.mp4',
+    aspectRatio: '16:9',
     overview: {
-      title: 'Lançamento para Frango no Pote',
-      description: 'Descrição do projeto 1',
+      title: 'Comercial Frango no Pote BBQ',
+      description: 'Comercial para o lançamento da linha BBQ do Frango no Pote.',
     },
     credits: [
       {
@@ -25,21 +26,22 @@ export const PROJECTS_DATA: Project[] = [
     videos: [
       {
         title: 'Video 1',
-        description: 'Descrição do video 1',
+        description: 'Comercial Frango no Pote BBQ',
         video: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/fnp.mp4',
       },
     ],
   },
   {
     id: 2,
-    title: 'Reels para Pilotis Imóveis',
+    title: 'Pilotis Imóveis',
     year: 2025,
-    category: 'Reels',
+    category: 'Institucional',
     client: 'Pilotis Imóveis',
     mainVideo: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/pilotis2.mp4',
+    aspectRatio: '9:16',
     overview: {
-      title: 'Reels para Pilotis Imóveis',
-      description: 'Descrição do projeto 2',
+      title: 'Pilotis Imóveis',
+      description: 'Vídeo institucional para a Pilotis Imóveis.',
     },
     credits: [
       {
@@ -54,21 +56,22 @@ export const PROJECTS_DATA: Project[] = [
     videos: [
       {
         title: 'Video 2',
-        description: 'Descrição do video 2',
+        description: 'Pilotis Imóveis',
         video: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/pilotis2.mp4',
       },
     ],
   },
   {
     id: 3,
-    title: 'Isofen 10 anos - Teaser',
+    title: 'Documentário Isofen — 10 Anos',
     year: 2025,
-    category: 'Teaser',
+    category: 'Documentário',
     client: 'Isofen',
     mainVideo: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/isofen.mp4',
+    aspectRatio: '16:9',
     overview: {
-      title: 'Isofen 10 anos - Teaser',
-      description: 'Descrição do projeto 3',
+      title: 'Documentário Isofen — 10 Anos',
+      description: 'Documentário comemorativo dos 10 anos da Isofen.',
     },
     credits: [
       {
@@ -83,21 +86,22 @@ export const PROJECTS_DATA: Project[] = [
     videos: [
       {
         title: 'Video 3',
-        description: 'Descrição do video 3',
+        description: 'Documentário Isofen — 10 Anos',
         video: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/isofen.mp4',
       },
     ],
   },
   {
     id: 4,
-    title: 'Reels para Açaí Puríssimo',
-    year: 2025,
+    title: 'Açaí Puríssimo',
+    year: 2024,
     category: 'Reels',
     client: 'Açaí Puríssimo',
     mainVideo: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/acai.mp4',
+    aspectRatio: '9:16',
     overview: {
-      title: 'Reels para Açaí Puríssimo',
-      description: 'Descrição do projeto 4',
+      title: 'Açaí Puríssimo',
+      description: 'Conteúdo para redes sociais do Açaí Puríssimo.',
     },
     credits: [
       {
@@ -108,7 +112,7 @@ export const PROJECTS_DATA: Project[] = [
     videos: [
       {
         title: 'Video 4',
-        description: 'Descrição do video 4',
+        description: 'Açaí Puríssimo',
         video: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/acai.mp4',
       },
     ],

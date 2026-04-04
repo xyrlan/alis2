@@ -37,7 +37,7 @@ export const InfiniteScrollingCarousel = () => {
   }, [xTranslation, width]);
 
   return (
-    <div className="relative h-[140px] bg-black flex items-center justify-center">
+    <div className="relative h-[140px] bg-black flex items-center justify-center overflow-hidden">
       <Image
         src="/images/border.png"
         alt="border"
@@ -54,7 +54,7 @@ export const InfiniteScrollingCarousel = () => {
       />
 
       <motion.div
-        className="absolute left-0 flex gap-50 z-50"
+        className="absolute left-0 flex gap-20 md:gap-50 z-50"
         ref={ref}
         style={{ x: xTranslation, willChange: 'transform' }}
       >

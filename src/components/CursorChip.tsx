@@ -2,6 +2,7 @@
 
 import { motion, useMotionValue, useSpring } from 'motion/react';
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 interface CursorChipProps {
   text?: string;
@@ -14,48 +15,47 @@ export const CursorChip = ({
   textColor = '#ffffff',
   isParentHovering = false,
 }: CursorChipProps) => {
-  const [isVisible, setIsVisible] = useState(false);
-
+  const [mounted, setMounted] = useState(false);
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
-  const springConfig = { damping: 50, stiffness: 300 };
+  const springConfig = { damping: 25, stiffness: 200 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    if (!isParentHovering) return;
+    setMounted(true);
+  }, []);
 
+  useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
-      if (!isVisible) setIsVisible(true);
     };
 
     window.addEventListener('mousemove', moveCursor);
     return () => window.removeEventListener('mousemove', moveCursor);
-  }, [cursorX, cursorY, isVisible, isParentHovering]);
+  }, [cursorX, cursorY]);
 
-  if (!isParentHovering) return null;
+  if (!isParentHovering || !mounted) return null;
 
-  return (
+  return createPortal(
     <motion.div
-      className="fixed pointer-events-none top-0 left-0 z-9999 flex items-center justify-center text-sm bg-opacity-50 bg-black/50 p-1 rounded"
+      className="fixed pointer-events-none top-0 left-0 z-[9999] flex items-center justify-center text-sm bg-black/50 px-2 py-1 rounded"
       style={{
         x: cursorXSpring,
         y: cursorYSpring,
-        translateX: '50%',
-        translateY: '70%',
+        translateX: '-50%',
+        translateY: '-50%',
         color: textColor,
       }}
       initial={{ opacity: 0, scale: 0 }}
-      animate={{
-        opacity: isVisible ? 1 : 0,
-        scale: isVisible ? 1 : 0,
-      }}
-      transition={{ duration: 0.2 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0 }}
+      transition={{ duration: 0.15 }}
     >
       {text}
-    </motion.div>
+    </motion.div>,
+    document.body
   );
 };

@@ -9,14 +9,14 @@ const ImageMotionComponent = motion.create(Image);
 export const AboutStory = ({ scrollYProgress }: AboutStoryProps) => {
   const scale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
   return (
-    <div className="h-[60vh] py-28">
-      <div className="flex justify-between h-full gap-12">
-        <div className="flex flex-col justify-between h-full">
+    <div className="py-10 md:py-20">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+        <div className="flex flex-col justify-between gap-8 md:gap-12">
           <div className="space-y-4">
             <p className="font-league-gothic tracking-wide text-lg">
-              OUR STORY
+              NOSSA HISTÓRIA
             </p>
-            <p className="tracking-tighter leading-none text-6xl font-bold">
+            <p className="tracking-tighter leading-none text-2xl md:text-4xl lg:text-6xl font-bold">
               {ABOUT_DATA.title2}
             </p>
             <p className="text-gray-400 text-lg tracking-tighter max-w-xl">
@@ -27,19 +27,19 @@ export const AboutStory = ({ scrollYProgress }: AboutStoryProps) => {
             {ABOUT_DATA.items.map((item) => (
               <div
                 key={item.title}
-                className="flex justify-between border-b items-end border-white/40 pb-2"
+                className="flex flex-col md:flex-row md:justify-between md:items-end border-b border-white/40 pb-2 gap-1"
               >
-                <span className="tracking-tighter leading-none text-5xl font-semibold">
+                <span className="tracking-tighter leading-none text-3xl md:text-5xl font-semibold">
                   {item.value}
                 </span>
-                <span className="text-gray-400 text-lg tracking-tighter">
+                <span className="text-gray-400 text-sm md:text-lg tracking-tighter">
                   {item.title}
                 </span>
               </div>
             ))}
           </div>
         </div>
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden h-[250px] md:h-auto">
           <ImageMotionComponent
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

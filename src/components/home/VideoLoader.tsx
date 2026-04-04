@@ -26,7 +26,8 @@ export function VideoLoader({
   playsInline = true,
   children,
   preload = 'none',
-}: VideoLoaderProps) {
+  overlayClassName = 'bg-black/30',
+}: VideoLoaderProps & { overlayClassName?: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -66,7 +67,7 @@ export function VideoLoader({
         playsInline={playsInline}
         className="w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-black/30">{children}</div>
+      <div className={`absolute inset-0 ${overlayClassName}`}>{children}</div>
     </div>
   );
 }

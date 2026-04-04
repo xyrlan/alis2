@@ -12,11 +12,11 @@ export const AboutHero = ({ scrollYProgress }: AboutHeroProps) => {
   const translateY = useTransform(scrollYProgress, [0, 1], [0, -350]);
 
   return (
-    <div className="space-y-14 pt-48 pb-28">
-      <p className="tracking-tighter leading-none text-6xl font-bold">
+    <div className="space-y-8 md:space-y-14 pt-24 md:pt-48 pb-14 md:pb-28">
+      <p className="tracking-tighter leading-none text-2xl md:text-4xl lg:text-6xl font-bold">
         {ABOUT_DATA.title}
       </p>
-      <div className="h-[730px] relative overflow-hidden">
+      <div className="h-[300px] md:h-[500px] lg:h-[730px] relative overflow-hidden">
         <ImageMotionComponent
           initial={{ opacity: 0, scale: 1.2 }}
           animate={{ opacity: 1, scale: 1 }}

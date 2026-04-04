@@ -2,43 +2,43 @@ import { Service } from '../types/service.type';
 
 export const SERVICES_DATA: Service[] = [
   {
-    name: 'Brand Films',
-    description: 'Description 1',
+    name: 'Filmes Institucionais',
+    description: 'Narrativas visuais para marcas',
   },
   {
-    name: 'Commercials & Ad Spots',
-    description: 'Description 2',
+    name: 'Comerciais e Publicidade',
+    description: 'Campanhas com impacto',
   },
   {
-    name: 'Event Cinematography',
-    description: 'Description 3',
+    name: 'Cinematografia de Eventos',
+    description: 'Cobertura cinematográfica',
   },
   {
-    name: 'Editorial & Fashion Films',
-    description: 'Description 4',
+    name: 'Filmes Editoriais e Moda',
+    description: 'Estética e storytelling',
   },
   {
-    name: 'Wedding Films',
-    description: 'Description 5',
+    name: 'Filmes de Casamento',
+    description: 'Histórias de amor em filme',
   },
   {
-    name: 'Product Films',
-    description: 'Description 6',
+    name: 'Filmes de Produto',
+    description: 'Produto em destaque',
   },
   {
-    name: 'Music Videos',
-    description: 'Description 6',
+    name: 'Videoclipes',
+    description: 'Música e imagem',
   },
   {
-    name: 'Documentary Shorts',
-    description: 'Description 6',
+    name: 'Documentários Curtos',
+    description: 'Histórias reais com profundidade',
   },
   {
-    name: 'Social Media Visuals',
-    description: 'Description 6',
+    name: 'Conteúdo para Redes Sociais',
+    description: 'Reels, stories e mais',
   },
   {
-    name: 'Creative Direction',
-    description: 'Description 6',
+    name: 'Direção Criativa',
+    description: 'Conceito e visão',
   },
 ];

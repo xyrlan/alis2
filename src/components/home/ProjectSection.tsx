@@ -30,9 +30,13 @@ const ProjectComponent = memo(function ProjectComponent({
   return (
     <div
       ref={ref}
-      className={`h-screen cursor-pointer top-0 ${isLast ? '' : 'sticky'}`}
+      className={`h-[60vh] md:h-screen cursor-pointer top-0 ${isLast ? '' : 'md:sticky'}`}
     >
       <VideoLoader src={project.mainVideo} />
+      <div className="md:hidden px-4 py-2">
+        <h3 className="font-league-gothic text-xl uppercase">{project.title}</h3>
+        <span className="text-sm text-gray-400">{project.year} · {project.category}</span>
+      </div>
     </div>
   );
 });
@@ -58,13 +62,13 @@ export const ProjectSection = () => {
     >
       <CursorChip isParentHovering={isHovering} />
       <div
-        className="h-[400vh] w-full grid grid-rows-4 z-10 absolute inset-0 pointer-events-none"
+        className="hidden md:grid h-[400vh] w-full grid-rows-4 z-10 absolute inset-0 pointer-events-none"
       >
         <div className="row-span-1 flex flex-col justify-center items-center sticky top-0">
-          <h2 className="text-5xl font-bold uppercase font-league-gothic">
+          <h2 className="text-3xl md:text-5xl font-bold uppercase font-league-gothic">
             {activeProject?.title}
           </h2>
-          <div className="flex items-center gap-2 font-medium tracking-tighter">
+          <div className="flex items-center gap-2 font-medium tracking-tighter text-sm">
             <span>{activeProject?.year}</span>
             <span>•</span>
             <span>{activeProject?.category}</span>

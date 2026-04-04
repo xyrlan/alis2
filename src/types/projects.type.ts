@@ -1,3 +1,5 @@
+export type AspectRatio = '16:9' | '9:16' | '1:1';
+
 export interface Project {
   id: number;
   title: string;
@@ -5,6 +7,7 @@ export interface Project {
   category: string;
   client: string;
   mainVideo: string;
+  aspectRatio: AspectRatio;
   overview: {
     title: string;
     description: string;
