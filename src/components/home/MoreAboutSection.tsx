@@ -1,5 +1,6 @@
 import { SERVICES_DATA } from '@/src/consts/services';
 import Link from 'next/link';
+import { trackEvent } from '@/src/lib/analytics';
 
 export const MoreAboutSection = () => {
   return (
@@ -12,6 +13,9 @@ export const MoreAboutSection = () => {
           <Link
             href="/contato"
             className="inline-block mt-10 border-b border-white/60 pb-1 font-league-gothic tracking-wide text-2xl uppercase hover:border-white transition-colors"
+            onClick={() =>
+              trackEvent('cta_contato_click', { location: 'more_about' })
+            }
           >
 {'Eternize seu prop\u00F3sito'}
           </Link>

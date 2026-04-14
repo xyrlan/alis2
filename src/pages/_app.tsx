@@ -6,6 +6,7 @@ import { Navbar } from '@/src/components/layout/Navbar';
 import PageTransition from '@/src/components/layout/PageTransition';
 import { Footer } from '@/src/components/layout/Footer';
 import Head from 'next/head';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -44,6 +45,9 @@ export default function App({ Component, pageProps, router }: AppProps) {
           <Footer />
         </SmoothScroll>
       </div>
+      {process.env.NEXT_PUBLIC_GA_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      )}
     </>
   );
 }

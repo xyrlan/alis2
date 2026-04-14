@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { motion } from 'motion/react';
 import { SOCIAL_ITEMS } from '@/src/consts/social';
 import { FlipLink } from '@/src/components/layout/FlipLink';
+import { trackEvent } from '@/src/lib/analytics';
 
 const EASING = [0.22, 1, 0.36, 1] as const;
 
@@ -49,6 +50,11 @@ export default function ContatoPage() {
                   <a
                     href="mailto:contato@alisfilmes.com"
                     className="hover:text-gray-300 transition-colors"
+                    onClick={() =>
+                      trackEvent('contact_email_click', {
+                        location: 'contato',
+                      })
+                    }
                   >
                     contato@alisfilmes.com
                   </a>
@@ -70,7 +76,16 @@ export default function ContatoPage() {
                 </span>
                 <div className="flex gap-6 text-xl font-semibold tracking-tighter">
                   {SOCIAL_ITEMS.map((social) => (
-                    <FlipLink href={social.href} key={social.href}>
+                    <FlipLink
+                      href={social.href}
+                      key={social.href}
+                      onClick={() =>
+                        trackEvent('social_click', {
+                          network: social.name.toLowerCase(),
+                          location: 'contato',
+                        })
+                      }
+                    >
                       {social.name}
                     </FlipLink>
                   ))}

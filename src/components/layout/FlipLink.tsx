@@ -11,10 +11,12 @@ export const FlipLink = ({
   children,
   href,
   width = '2',
+  onClick,
 }: {
   children: string;
   href: string;
   width?: string;
+  onClick?: () => void;
 }) => {
   return (
     <MotionLinkComponent
@@ -22,6 +24,7 @@ export const FlipLink = ({
       whileHover="hovered"
       className="relative block overflow-hidden whitespace-nowrap"
       href={href}
+      onClick={onClick}
     >
       <div>
         {children.split('').map((l, i) => {

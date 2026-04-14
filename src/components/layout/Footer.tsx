@@ -2,6 +2,7 @@
 import { FlipLink } from './FlipLink';
 import Image from 'next/image';
 import { SOCIAL_ITEMS } from '@/src/consts/social';
+import { trackEvent } from '@/src/lib/analytics';
 
 export const Footer = () => {
   const text = 'ETERNIZE SEU PROPÓSITO';
@@ -24,7 +25,11 @@ export const Footer = () => {
           className="absolute bottom-0 rotate-180 left-0 h-[18px] scale-x-200 hidden md:block"
         />
         <div className="border-b w-fit h-fit">
-          <FlipLink href="/contato" width="10">
+          <FlipLink
+            href="/contato"
+            width="10"
+            onClick={() => trackEvent('cta_contato_click', { location: 'footer' })}
+          >
             {text}
           </FlipLink>
         </div>
@@ -33,16 +38,45 @@ export const Footer = () => {
         <span className="flex gap-1">
           Designed in
           <span className="text-white">
-            <FlipLink href="https://cursor.com">Cursor</FlipLink>
+            <FlipLink
+              href="https://cursor.com"
+              onClick={() =>
+                trackEvent('external_link_click', {
+                  url: 'https://cursor.com',
+                  location: 'footer',
+                })
+              }
+            >
+              Cursor
+            </FlipLink>
           </span>
           by
           <span className="text-white">
-            <FlipLink href="https://xyrlan.com">Xyrlan</FlipLink>
+            <FlipLink
+              href="https://xyrlan.com"
+              onClick={() =>
+                trackEvent('external_link_click', {
+                  url: 'https://xyrlan.com',
+                  location: 'footer',
+                })
+              }
+            >
+              Xyrlan
+            </FlipLink>
           </span>
         </span>
         <span className="flex gap-4 text-white">
           {SOCIAL_ITEMS.map((social) => (
-            <FlipLink href={social.href} key={social.href}>
+            <FlipLink
+              href={social.href}
+              key={social.href}
+              onClick={() =>
+                trackEvent('social_click', {
+                  network: social.name.toLowerCase(),
+                  location: 'footer',
+                })
+              }
+            >
               {social.name}
             </FlipLink>
           ))}
