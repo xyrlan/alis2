@@ -23,7 +23,7 @@ const leagueGothic = League_Gothic({
   subsets: ['latin'],
 });
 
-export default function App({ Component, pageProps, router }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
@@ -39,7 +39,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
       >
         <SmoothScroll>
           <Navbar />
-          <PageTransition routerKey={router.asPath}>
+          <PageTransition>
             <Component {...pageProps} />
           </PageTransition>
           <Footer />
