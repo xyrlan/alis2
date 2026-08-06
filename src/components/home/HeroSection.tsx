@@ -32,7 +32,11 @@ export const HeroSection = () => {
   return (
     <main className="sticky top-0">
       <div className="h-screen w-full">
-        <VideoLoader src={HERO_SECTION.video} preload="metadata">
+        <VideoLoader
+          src={HERO_SECTION.video}
+          poster={HERO_SECTION.poster}
+          preload="metadata"
+        >
           <div className="flex justify-center items-center h-full w-full">
             <HeroLogo />
           </div>

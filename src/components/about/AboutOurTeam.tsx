@@ -5,7 +5,9 @@ export const AboutOurTeam = () => {
   return (
     <div className="py-14 md:py-28">
       <div className="space-y-3">
-        <h1 className="text-6xl track font-league-gothic">NOSSO TIME</h1>
+        <h2 className="text-4xl md:text-6xl tracking-wide uppercase font-league-gothic">
+          NOSSO TIME
+        </h2>
         <p className="text-gray-400 text-lg tracking-tighter max-w-xl">
           Por trás de cada frame da Alis há um time de contadores de histórias,
           artistas e pensadores visuais que se dedicam à arte do audiovisual.

@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import { Seo } from '@/src/components/Seo';
 import { ProjectShowcase } from '@/src/components/projects/ProjectShowcase';
 import { PROJECTS_DATA } from '@/src/consts/projects';
 import { motion } from 'motion/react';
@@ -10,10 +10,11 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <Head>
-        <title>Alis Filmes - Projetos</title>
-        <meta name="description" content="Conheça nossos projetos" />
-      </Head>
+      <Seo
+        title="Projetos"
+        description="Conheça os filmes da Alis: comerciais, institucionais, documentários e conteúdo para marcas como Frango no Pote, Pilotis Imóveis, Isofen e Açaí Puríssimo."
+        path="/projects"
+      />
       <div className="flex flex-col items-center pt-24 md:pt-48 pb-14 md:pb-28 px-6">
         <div className="max-w-440 w-full">
           <motion.h1

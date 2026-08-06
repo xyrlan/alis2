@@ -56,7 +56,7 @@ export const AboutStory = () => {
             viewport={{ once: true }}
             style={{ scale }}
             src="/images/alisabout2.jpg"
-            alt="About 1"
+            alt="Bastidores de produção audiovisual da Alis Filmes"
             width={1920}
             height={1080}
             className="h-full w-full object-cover"

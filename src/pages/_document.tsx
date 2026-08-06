@@ -1,14 +1,38 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
+const JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Alis Filmes',
+  description:
+    'Produtora audiovisual em Brasília: filmes institucionais, comerciais para TV e streaming, documentários e conteúdo para redes sociais.',
+  url: 'https://alisfilmes.com',
+  logo: 'https://alisfilmes.com/icon.png',
+  image: 'https://alisfilmes.com/og.png',
+  email: 'contato@alisfilmes.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Brasília',
+    addressRegion: 'DF',
+    addressCountry: 'BR',
+  },
+  sameAs: [
+    'https://x.com/alisfilmes',
+    'https://www.instagram.com/alisfilmes',
+    'https://www.vimeo.com/alisfilmes',
+  ],
+};
+
 export default function Document() {
   return (
-    <Html>
+    <Html lang="pt-BR">
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/icon.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
         />
       </Head>
       <body

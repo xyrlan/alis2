@@ -4,6 +4,7 @@ import { useRef, useEffect, ReactNode } from 'react';
 
 interface VideoLoaderProps {
   src: string;
+  poster?: string;
   className?: string;
   videoClassName?: string;
   autoPlay?: boolean;
@@ -20,6 +21,7 @@ interface VideoLoaderProps {
 
 export function VideoLoader({
   src,
+  poster,
   autoPlay = true,
   muted = true,
   loop = true,
@@ -73,6 +75,7 @@ export function VideoLoader({
       )}
       <video
         src={src}
+        poster={poster}
         autoPlay={autoPlay}
         muted={muted}
         preload={preload}

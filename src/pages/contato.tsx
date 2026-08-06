@@ -1,5 +1,5 @@
-import Head from 'next/head';
 import { motion } from 'motion/react';
+import { Seo } from '@/src/components/Seo';
 import { SOCIAL_ITEMS } from '@/src/consts/social';
 import { FlipLink } from '@/src/components/layout/FlipLink';
 import { trackEvent } from '@/src/lib/analytics';
@@ -16,13 +16,11 @@ const fadeUp = (delay: number) => ({
 export default function ContatoPage() {
   return (
     <>
-      <Head>
-        <title>Alis Filmes - Contato</title>
-        <meta
-          name="description"
-          content="Entre em contato com a Alis Filmes"
-        />
-      </Head>
+      <Seo
+        title="Contato"
+        description="Tem um projeto em mente? Fale com a Alis Filmes: orçamentos para filmes institucionais, comerciais, documentários e conteúdo para redes sociais em Brasília."
+        path="/contato"
+      />
       <div className="flex flex-col items-center justify-center px-6 pt-24 md:pt-48 pb-14 md:pb-28">
         <div className="max-w-440 w-full">
           <motion.h1

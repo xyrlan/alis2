@@ -15,9 +15,9 @@ export const AboutHero = () => {
 
   return (
     <div className="space-y-8 md:space-y-14 pt-24 md:pt-48 pb-14 md:pb-28">
-      <p className="tracking-tighter leading-none text-2xl md:text-4xl lg:text-6xl font-bold">
+      <h1 className="tracking-tighter leading-none text-2xl md:text-4xl lg:text-6xl font-bold">
         {ABOUT_DATA.title}
-      </p>
+      </h1>
       <div
         ref={ref}
         className="h-[300px] md:h-[500px] lg:h-[730px] relative overflow-hidden"
@@ -28,7 +28,7 @@ export const AboutHero = () => {
           transition={{ duration: 0.5, ease: 'easeInOut' }}
           style={{ y: translateY }}
           src="/images/alisabout.jpg"
-          alt="About 1"
+          alt="Equipe da Alis Filmes em set de filmagem"
           width={1920}
           height={1080}
           className="w-full h-[1080px] object-cover object-top absolute bottom-0 top-0"

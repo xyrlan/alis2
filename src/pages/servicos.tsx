@@ -1,13 +1,13 @@
-import Head from 'next/head';
 import { motion } from 'motion/react';
+import { Seo } from '@/src/components/Seo';
 import { SERVICES_DETAIL } from '@/src/consts/services';
 import { ServiceSection } from '@/src/components/servicos/ServiceSection';
 import { ServicesPhotoStrip } from '@/src/components/servicos/ServicesPhotoStrip';
 
 const EASING: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-const PAGE_TITLE = 'Alis Filmes - Serviços';
-const PAGE_DESC = 'Conheça os serviços da Alis Filmes';
+const PAGE_DESC =
+  'Documentários, conteúdo para redes sociais, filmes institucionais e comerciais para TV e streaming. Do conceito à tela, produção audiovisual completa em Brasília.';
 const HEADING = 'Serviços';
 const INTRO =
   'Do conceito à tela, cada projeto é uma oportunidade de contar uma história que importa.';
@@ -15,10 +15,7 @@ const INTRO =
 export default function ServicosPage() {
   return (
     <>
-      <Head>
-        <title>{PAGE_TITLE}</title>
-        <meta name="description" content={PAGE_DESC} />
-      </Head>
+      <Seo title="Serviços" description={PAGE_DESC} path="/servicos" />
       <div className="pt-24 md:pt-48 pb-14 md:pb-28">
         <div className="flex flex-col items-center px-6">
           <div className="max-w-440 w-full">
