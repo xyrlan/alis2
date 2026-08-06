@@ -30,12 +30,21 @@ const ProjectComponent = memo(function ProjectComponent({
   return (
     <div
       ref={ref}
-      className={`h-[60vh] md:h-screen cursor-pointer top-0 ${isLast ? '' : 'md:sticky'}`}
+      className={`cursor-pointer top-0 ${isLast ? '' : 'md:sticky'}`}
     >
-      <VideoLoader src={project.mainVideo} />
-      <div className="md:hidden px-4 py-2">
-        <h3 className="font-league-gothic text-xl uppercase">{project.title}</h3>
-        <span className="text-sm text-gray-400">{project.year} · {project.category}</span>
+      <div className="h-[60vh] md:h-screen">
+        <VideoLoader
+          src={project.mainVideo}
+          blurBackdrop={project.aspectRatio !== '16:9'}
+        />
+      </div>
+      <div className="md:hidden px-4 py-4">
+        <h3 className="font-league-gothic text-2xl uppercase">
+          {project.title}
+        </h3>
+        <span className="text-sm text-gray-300 tracking-tighter">
+          {project.year} · {project.category}
+        </span>
       </div>
     </div>
   );
@@ -55,7 +64,7 @@ export const ProjectSection = () => {
 
   return (
     <div
-      className="relative select-none"
+      className="relative select-none bg-background -mt-px"
       ref={containerRef}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}

@@ -38,7 +38,7 @@ export const PROJECTS_DATA: Project[] = [
     category: 'Institucional',
     client: 'Pilotis Imóveis',
     mainVideo: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/pilotis2.mp4',
-    aspectRatio: '9:16',
+    aspectRatio: '9:8',
     overview: {
       title: 'Pilotis Imóveis',
       description: 'Vídeo institucional para a Pilotis Imóveis.',
@@ -98,7 +98,7 @@ export const PROJECTS_DATA: Project[] = [
     category: 'Reels',
     client: 'Açaí Puríssimo',
     mainVideo: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/acai.mp4',
-    aspectRatio: '9:16',
+    aspectRatio: '9:8',
     overview: {
       title: 'Açaí Puríssimo',
       description: 'Conteúdo para redes sociais do Açaí Puríssimo.',

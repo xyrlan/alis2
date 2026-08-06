@@ -1,14 +1,16 @@
-import { motion, MotionValue, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { ABOUT_DATA } from '@/src/consts/about';
 import Image from 'next/image';
+import { useRef } from 'react';
 
 const ImageMotionComponent = motion.create(Image);
 
-interface AboutHeroProps {
-  scrollYProgress: MotionValue<number>;
-}
-
-export const AboutHero = ({ scrollYProgress }: AboutHeroProps) => {
+export const AboutHero = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
   const translateY = useTransform(scrollYProgress, [0, 1], [0, -350]);
 
   return (
@@ -16,7 +18,10 @@ export const AboutHero = ({ scrollYProgress }: AboutHeroProps) => {
       <p className="tracking-tighter leading-none text-2xl md:text-4xl lg:text-6xl font-bold">
         {ABOUT_DATA.title}
       </p>
-      <div className="h-[300px] md:h-[500px] lg:h-[730px] relative overflow-hidden">
+      <div
+        ref={ref}
+        className="h-[300px] md:h-[500px] lg:h-[730px] relative overflow-hidden"
+      >
         <ImageMotionComponent
           initial={{ opacity: 0, scale: 1.2 }}
           animate={{ opacity: 1, scale: 1 }}

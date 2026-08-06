@@ -27,45 +27,60 @@ export function VideoLoader({
   children,
   preload = 'none',
   overlayClassName = 'bg-black/30',
-}: VideoLoaderProps & { overlayClassName?: string }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  blurBackdrop = false,
+}: VideoLoaderProps & { overlayClassName?: string; blurBackdrop?: boolean }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const video = videoRef.current;
     const container = containerRef.current;
-    if (!video || !container) return;
+    if (!container) return;
 
+    const videos = Array.from(container.querySelectorAll('video'));
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          if (video.paused && autoPlay) {
-            video.play().catch(() => {});
+        videos.forEach((video) => {
+          if (entry.isIntersecting) {
+            if (video.paused && autoPlay) {
+              video.play().catch(() => {});
+            }
+          } else {
+            if (!video.paused) {
+              video.pause();
+            }
           }
-        } else {
-          if (!video.paused) {
-            video.pause();
-          }
-        }
+        });
       },
       { threshold: 0.1 }
     );
 
     observer.observe(container);
     return () => observer.disconnect();
-  }, [autoPlay]);
+  }, [autoPlay, blurBackdrop]);
 
   return (
-    <div ref={containerRef} className="relative w-full h-full">
+    <div ref={containerRef} className="relative w-full h-full overflow-hidden">
+      {blurBackdrop && (
+        <video
+          src={src}
+          autoPlay={autoPlay}
+          muted
+          preload={preload}
+          loop={loop}
+          playsInline
+          aria-hidden
+          className="absolute inset-0 w-full h-full object-cover scale-125 blur-3xl brightness-[0.3]"
+        />
+      )}
       <video
-        ref={videoRef}
         src={src}
         autoPlay={autoPlay}
         muted={muted}
         preload={preload}
         loop={loop}
         playsInline={playsInline}
-        className="w-full h-full object-cover"
+        className={`w-full h-full ${
+          blurBackdrop ? 'relative object-contain' : 'object-cover'
+        }`}
       />
       <div className={`absolute inset-0 ${overlayClassName}`}>{children}</div>
     </div>

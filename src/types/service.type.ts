@@ -3,9 +3,15 @@ export interface Service {
   description: string;
 }
 
+export interface ServicePhoto {
+  src: string;
+  alt: string;
+}
+
 export interface ServiceDetail {
   id: number;
   title: string;
   subtitle: string;
   description: string;
+  photos: ServicePhoto[];
 }

@@ -1,13 +1,19 @@
-import { motion, MotionValue, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { ABOUT_DATA } from '@/src/consts/about';
 import Image from 'next/image';
-interface AboutStoryProps {
-  scrollYProgress: MotionValue<number>;
-}
+import { useRef } from 'react';
+import { CountUp } from './CountUp';
+
 const ImageMotionComponent = motion.create(Image);
 
-export const AboutStory = ({ scrollYProgress }: AboutStoryProps) => {
-  const scale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
+export const AboutStory = () => {
+  const imageRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: imageRef,
+    offset: ['start end', 'end start'],
+  });
+  const scale = useTransform(scrollYProgress, [0, 1], [1.25, 1]);
+
   return (
     <div className="py-10 md:py-20">
       <div className="flex flex-col md:flex-row gap-8 md:gap-12">
@@ -30,7 +36,7 @@ export const AboutStory = ({ scrollYProgress }: AboutStoryProps) => {
                 className="flex flex-col md:flex-row md:justify-between md:items-end border-b border-white/40 pb-2 gap-1"
               >
                 <span className="tracking-tighter leading-none text-3xl md:text-5xl font-semibold">
-                  {item.value}
+                  <CountUp value={item.value} />
                 </span>
                 <span className="text-gray-400 text-sm md:text-lg tracking-tighter">
                   {item.title}
@@ -39,7 +45,10 @@ export const AboutStory = ({ scrollYProgress }: AboutStoryProps) => {
             ))}
           </div>
         </div>
-        <div className="relative overflow-hidden h-[250px] md:h-auto">
+        <div
+          ref={imageRef}
+          className="relative overflow-hidden h-[250px] md:h-auto"
+        >
           <ImageMotionComponent
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
