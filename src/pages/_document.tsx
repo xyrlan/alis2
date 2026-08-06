@@ -27,9 +27,9 @@ export default function Document() {
   return (
     <Html lang="pt-BR">
       <Head>
-        <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/icon.png" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/favicon.ico?v=2" sizes="32x32" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/icon.png?v=2" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
