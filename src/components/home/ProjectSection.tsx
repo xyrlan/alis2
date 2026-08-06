@@ -2,7 +2,7 @@ import { useInView } from 'motion/react';
 import { PROJECTS_DATA } from '@/src/consts/projects';
 import { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { VideoLoader } from './VideoLoader';
-import { Project } from '@/src/types/projects.type';
+import { PORTRAIT_FORMATS, Project } from '@/src/types/projects.type';
 import { CursorChip } from '@/src/components/CursorChip';
 
 const ProjectComponent = memo(function ProjectComponent({
@@ -35,7 +35,7 @@ const ProjectComponent = memo(function ProjectComponent({
       <div className="h-[60vh] md:h-screen">
         <VideoLoader
           src={project.mainVideo}
-          blurBackdrop={project.aspectRatio !== '16:9'}
+          blurBackdrop={PORTRAIT_FORMATS.includes(project.aspectRatio)}
         />
       </div>
       <div className="md:hidden px-4 py-4">

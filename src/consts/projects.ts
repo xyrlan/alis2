@@ -7,8 +7,8 @@ export const PROJECTS_DATA: Project[] = [
     year: 2025,
     category: 'Comercial',
     client: 'Frango no Pote',
-    mainVideo: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/fnp.mp4',
-    aspectRatio: '16:9',
+    mainVideo: 'https://pub-354348fbc47e4d208f693f3da3f9fd92.r2.dev/fnp.mp4',
+    aspectRatio: '2.35:1',
     overview: {
       title: 'Comercial Frango no Pote BBQ',
       description: 'Comercial para o lançamento da linha BBQ do Frango no Pote.',
@@ -27,7 +27,7 @@ export const PROJECTS_DATA: Project[] = [
       {
         title: 'Video 1',
         description: 'Comercial Frango no Pote BBQ',
-        video: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/fnp.mp4',
+        video: 'https://pub-354348fbc47e4d208f693f3da3f9fd92.r2.dev/fnp.mp4',
       },
     ],
   },
@@ -37,7 +37,7 @@ export const PROJECTS_DATA: Project[] = [
     year: 2025,
     category: 'Institucional',
     client: 'Pilotis Imóveis',
-    mainVideo: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/pilotis2.mp4',
+    mainVideo: 'https://pub-354348fbc47e4d208f693f3da3f9fd92.r2.dev/pilotis2.mp4',
     aspectRatio: '9:8',
     overview: {
       title: 'Pilotis Imóveis',
@@ -57,7 +57,7 @@ export const PROJECTS_DATA: Project[] = [
       {
         title: 'Video 2',
         description: 'Pilotis Imóveis',
-        video: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/pilotis2.mp4',
+        video: 'https://pub-354348fbc47e4d208f693f3da3f9fd92.r2.dev/pilotis2.mp4',
       },
     ],
   },
@@ -67,7 +67,7 @@ export const PROJECTS_DATA: Project[] = [
     year: 2025,
     category: 'Documentário',
     client: 'Isofen',
-    mainVideo: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/isofen.mp4',
+    mainVideo: 'https://pub-354348fbc47e4d208f693f3da3f9fd92.r2.dev/isofen.mp4',
     aspectRatio: '16:9',
     overview: {
       title: 'Documentário Isofen — 10 Anos',
@@ -87,7 +87,7 @@ export const PROJECTS_DATA: Project[] = [
       {
         title: 'Video 3',
         description: 'Documentário Isofen — 10 Anos',
-        video: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/isofen.mp4',
+        video: 'https://pub-354348fbc47e4d208f693f3da3f9fd92.r2.dev/isofen.mp4',
       },
     ],
   },
@@ -97,7 +97,7 @@ export const PROJECTS_DATA: Project[] = [
     year: 2024,
     category: 'Reels',
     client: 'Açaí Puríssimo',
-    mainVideo: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/acai.mp4',
+    mainVideo: 'https://pub-354348fbc47e4d208f693f3da3f9fd92.r2.dev/acai.mp4',
     aspectRatio: '9:8',
     overview: {
       title: 'Açaí Puríssimo',
@@ -113,7 +113,7 @@ export const PROJECTS_DATA: Project[] = [
       {
         title: 'Video 4',
         description: 'Açaí Puríssimo',
-        video: 'https://alisfilmes.s3.sa-east-1.amazonaws.com/acai.mp4',
+        video: 'https://pub-354348fbc47e4d208f693f3da3f9fd92.r2.dev/acai.mp4',
       },
     ],
   },

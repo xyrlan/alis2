@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 import { PROJECTS_DATA } from '@/src/consts/projects';
+import { PORTRAIT_FORMATS } from '@/src/types/projects.type';
 import { VideoLoader } from '@/src/components/home/VideoLoader';
 
 const EASING: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -12,6 +13,7 @@ const ASPECT_RATIO_MAP = {
   '9:16': '9/16',
   '1:1': '1/1',
   '9:8': '9/8',
+  '2.35:1': '2.35/1',
 } as const;
 
 export function ProjectShowcase() {
@@ -69,7 +71,7 @@ export function ProjectShowcase() {
                 >
                   <VideoLoader
                     src={project.mainVideo}
-                    blurBackdrop={project.aspectRatio !== '16:9'}
+                    blurBackdrop={PORTRAIT_FORMATS.includes(project.aspectRatio)}
                     overlayClassName=""
                     preload="metadata"
                   />
