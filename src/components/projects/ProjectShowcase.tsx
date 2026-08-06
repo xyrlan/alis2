@@ -71,7 +71,11 @@ export function ProjectShowcase() {
                 >
                   <VideoLoader
                     src={project.mainVideo}
-                    blurBackdrop={PORTRAIT_FORMATS.includes(project.aspectRatio)}
+                    backdrop={
+                      PORTRAIT_FORMATS.includes(project.aspectRatio)
+                        ? 'black'
+                        : 'none'
+                    }
                     overlayClassName=""
                     preload="metadata"
                   />
@@ -100,7 +104,7 @@ export function ProjectShowcase() {
             >
               <VideoLoader
                 src={active.mainVideo}
-                blurBackdrop
+                backdrop="black"
                 overlayClassName=""
                 preload="metadata"
               />

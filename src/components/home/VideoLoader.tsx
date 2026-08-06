@@ -2,6 +2,8 @@
 
 import { useRef, useEffect, ReactNode } from 'react';
 
+type Backdrop = 'none' | 'blur' | 'black';
+
 interface VideoLoaderProps {
   src: string;
   poster?: string;
@@ -29,8 +31,8 @@ export function VideoLoader({
   children,
   preload = 'none',
   overlayClassName = 'bg-black/30',
-  blurBackdrop = false,
-}: VideoLoaderProps & { overlayClassName?: string; blurBackdrop?: boolean }) {
+  backdrop = 'none',
+}: VideoLoaderProps & { overlayClassName?: string; backdrop?: Backdrop }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -57,11 +59,16 @@ export function VideoLoader({
 
     observer.observe(container);
     return () => observer.disconnect();
-  }, [autoPlay, blurBackdrop]);
+  }, [autoPlay, backdrop]);
 
   return (
-    <div ref={containerRef} className="relative w-full h-full overflow-hidden">
-      {blurBackdrop && (
+    <div
+      ref={containerRef}
+      className={`relative w-full h-full overflow-hidden ${
+        backdrop === 'black' ? 'bg-black' : ''
+      }`}
+    >
+      {backdrop === 'blur' && (
         <video
           src={src}
           autoPlay={autoPlay}
@@ -82,7 +89,7 @@ export function VideoLoader({
         loop={loop}
         playsInline={playsInline}
         className={`w-full h-full ${
-          blurBackdrop ? 'relative object-contain' : 'object-cover'
+          backdrop !== 'none' ? 'relative object-contain' : 'object-cover'
         }`}
       />
       <div className={`absolute inset-0 ${overlayClassName}`}>{children}</div>

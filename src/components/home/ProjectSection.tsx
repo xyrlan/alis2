@@ -35,7 +35,9 @@ const ProjectComponent = memo(function ProjectComponent({
       <div className="h-[60vh] md:h-screen">
         <VideoLoader
           src={project.mainVideo}
-          blurBackdrop={PORTRAIT_FORMATS.includes(project.aspectRatio)}
+          backdrop={
+            PORTRAIT_FORMATS.includes(project.aspectRatio) ? 'black' : 'none'
+          }
         />
       </div>
       <div className="md:hidden px-4 py-4">
