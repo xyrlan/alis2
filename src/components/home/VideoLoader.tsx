@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, ReactNode } from 'react';
 
-type Backdrop = 'none' | 'blur' | 'black';
+type Backdrop = 'none' | 'blur' | 'black' | 'background';
 
 interface VideoLoaderProps {
   src: string;
@@ -66,7 +66,7 @@ export function VideoLoader({
       ref={containerRef}
       className={`relative w-full h-full overflow-hidden ${
         backdrop === 'black' ? 'bg-black' : ''
-      }`}
+      } ${backdrop === 'background' ? 'bg-background' : ''}`}
     >
       {backdrop === 'blur' && (
         <video

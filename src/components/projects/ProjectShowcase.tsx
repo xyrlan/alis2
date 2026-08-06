@@ -73,7 +73,7 @@ export function ProjectShowcase() {
                     src={project.mainVideo}
                     backdrop={
                       PORTRAIT_FORMATS.includes(project.aspectRatio)
-                        ? 'black'
+                        ? 'background'
                         : 'none'
                     }
                     overlayClassName=""
@@ -104,7 +104,7 @@ export function ProjectShowcase() {
             >
               <VideoLoader
                 src={active.mainVideo}
-                backdrop="black"
+                backdrop="background"
                 overlayClassName=""
                 preload="metadata"
               />
