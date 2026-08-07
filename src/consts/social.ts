@@ -2,12 +2,12 @@ import { Social } from '../types/social.type';
 
 export const SOCIAL_ITEMS: Social[] = [
   {
-    name: 'Twitter/X',
-    href: 'https://x.com/alisfilmes',
+    name: 'WhatsApp',
+    href: 'https://wa.me/5561984270040',
   },
   {
     name: 'Instagram',
-    href: 'https://www.instagram.com/alisfilmes',
+    href: 'https://www.instagram.com/alis.filmes',
   },
   {
     name: 'Vimeo',

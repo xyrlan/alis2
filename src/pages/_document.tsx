@@ -10,6 +10,7 @@ const JSON_LD = {
   logo: 'https://alisfilmes.com/icon.png',
   image: 'https://alisfilmes.com/og.png',
   email: 'contato@alisfilmes.com',
+  telephone: '+55 61 98427-0040',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Brasília',
@@ -17,8 +18,7 @@ const JSON_LD = {
     addressCountry: 'BR',
   },
   sameAs: [
-    'https://x.com/alisfilmes',
-    'https://www.instagram.com/alisfilmes',
+    'https://www.instagram.com/alis.filmes',
     'https://www.vimeo.com/alisfilmes',
   ],
 };

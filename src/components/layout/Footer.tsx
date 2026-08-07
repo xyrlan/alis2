@@ -8,7 +8,7 @@ export const Footer = () => {
   const COPYRIGHT_TEXT = '© 2025 Alis Filmes.';
   return (
     <footer className="h-auto min-h-[30vh] md:h-[40vh] w-full pt-12 md:pt-28 px-6 -z-10 bg-background flex flex-col justify-between items-center fixed bottom-0">
-      <div className="w-full flex justify-center items-center uppercase tracking-normal text-4xl md:text-7xl lg:text-9xl select-none leading-tight md:leading-26 relative font-league-gothic h-auto md:h-[280px]">
+      <div className="w-full flex justify-center items-center uppercase tracking-normal text-4xl md:text-7xl lg:text-9xl select-none leading-tight relative font-league-gothic h-auto md:h-[280px]">
         <div className="border-b w-fit h-fit">
           <FlipLink
             href="/contato"

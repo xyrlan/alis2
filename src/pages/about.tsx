@@ -1,7 +1,8 @@
 import { Seo } from '@/src/components/Seo';
 import { AboutHero } from '@/src/components/about/AboutHero';
 import { AboutStory } from '@/src/components/about/AboutStory';
-import { AboutOurTeam } from '@/src/components/about/AboutOurTeam';
+// Reativar quando chegarem as fotos reais do time
+// import { AboutOurTeam } from '@/src/components/about/AboutOurTeam';
 
 export default function AboutPage() {
   return (
@@ -15,7 +16,7 @@ export default function AboutPage() {
         <div className="max-w-440">
           <AboutHero />
           <AboutStory />
-          <AboutOurTeam />
+          {/* <AboutOurTeam /> */}
         </div>
       </div>
     </>
