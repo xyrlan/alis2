@@ -7,8 +7,8 @@ export const Footer = () => {
   const text = 'ETERNIZE SEU PROPÓSITO';
   const COPYRIGHT_TEXT = '© 2025 Alis Filmes.';
   return (
-    <footer className="h-auto min-h-[30vh] md:h-[40vh] w-full pt-12 md:pt-28 px-6 -z-10 bg-background flex flex-col justify-between items-center fixed bottom-0">
-      <div className="w-full flex justify-center items-center uppercase tracking-normal text-4xl md:text-7xl lg:text-9xl select-none leading-tight relative font-league-gothic h-auto md:h-[280px]">
+    <footer className="h-auto min-h-[30vh] md:h-[40vh] w-full pt-12 md:pt-14 px-6 -z-10 bg-background flex flex-col justify-between items-center fixed bottom-0">
+      <div className="w-full flex flex-1 justify-center items-center uppercase tracking-normal text-4xl md:text-7xl lg:text-9xl select-none leading-tight relative font-league-gothic h-auto">
         <div className="border-b w-fit h-fit">
           <FlipLink
             href="/contato"
@@ -19,7 +19,7 @@ export const Footer = () => {
           </FlipLink>
         </div>
       </div>
-      <div className="w-full pt-8 md:pt-20 pb-4 flex flex-col md:flex-row items-center gap-2 md:gap-0 justify-between leading-3.5 uppercase text-xs tracking-tighter text-gray-400">
+      <div className="w-full pt-8 md:pt-4 pb-4 flex flex-col md:flex-row items-center gap-2 md:gap-0 justify-between leading-normal uppercase text-xs tracking-tighter text-gray-400">
         <span className="flex gap-1">
           Designed in
           <span className="text-white">
