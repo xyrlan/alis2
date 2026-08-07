@@ -28,6 +28,7 @@ export default function Document() {
     <Html lang="pt-BR">
       <Head>
         <link rel="icon" href="/favicon.ico?v=2" sizes="32x32" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/icon-96.png" />
         <link rel="icon" type="image/png" sizes="512x512" href="/icon.png?v=2" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
         <script
